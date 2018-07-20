@@ -50,14 +50,18 @@ class App extends Component {
 	  }
 	  submitEdit(event){
 	  	if(event.key==="Enter"){
-	  		let TodoClone = this.state.TodoList;
-	  		let index = event.target.dataset.key;
-	  		TodoClone[index].editstate = false;
-	  		TodoClone[index].title = event.target.value;
-	  		this.setState({
-	  			TodoList:TodoClone,
-	  		});
+	  		if(event.target.value!==''){
+		  		let TodoClone = this.state.TodoList;
+		  		let index = event.target.dataset.key;
+		  		TodoClone[index].editstate = false;
+		  		TodoClone[index].title = event.target.value;
+		  		this.setState({
+		  			TodoList:TodoClone,
+		  		});
 	  		// console.log(event.target.dataset.key);
+	  		} else {
+	  			document.getElementById("modaltrue").removeAttribute("hidden");
+	  		}
 	  	}
 	  	// console.log("wow");
 	  	// 
@@ -202,7 +206,7 @@ class App extends Component {
 		    		editstate:false,
 		    	}
 		  	});
-		  	console.log(TodoClone);
+		  	// console.log(TodoClone);
 		  } else {
 		  	// alert("Title is Blank!");
 		  	document.getElementById("modaltrue").removeAttribute("hidden");
@@ -215,7 +219,7 @@ class App extends Component {
 	  	this.setState({
 	  		TodoList:TodoClone,
 	  	});
-	  	console.log(TodoClone);
+	  	// console.log(TodoClone);
 	  	event.preventDefault();
   	  }
   	  deletetarget(event) {
@@ -226,7 +230,7 @@ class App extends Component {
 	  	});
   	  }
 	  handleSubmit(event) {
-	    console.log(this.state.TodoList);
+	    // console.log(this.state.TodoList);
 	    event.preventDefault();
   	  }
   render() {

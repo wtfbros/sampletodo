@@ -41,18 +41,28 @@ class TODOForm extends Component {
 		         {/*<button type="button" name="delet" onClick={this.props.deletebtn}> DELET</button>*/}
 	        </FormGroup>
         </div>
-        <div className="static-modal" id="modaltrue" hidden>
-		  <Modal.Dialog>
-		    {/*<Modal.Header>
-		      <Modal.Title>Modal title</Modal.Title>
-		    </Modal.Header>*/}
+        <div class="container">
+        	<div class="row justify-content-md-center">
+        		<div class="col-md-4" />
+		        <div className="static-modal" class="col-md-4" id="modaltrue" hidden>
+				  <Modal.Dialog>
+				    {/*<Modal.Header>
+				      <Modal.Title>Modal title</Modal.Title>
+				    </Modal.Header>*/}
 
-		    <Modal.Body>Title is Empty</Modal.Body>
+				    <Modal.Body>
+				    	Title is Empty <br/><br/><br/><br/>
+				    	<Button bsStyle="danger" id="bottom-right" bsSize="small" onClick={this.props.handleClose}>Close</Button>
 
-		    <Modal.Footer>
-		      <Button bsSize="small" onClick={this.props.handleClose}>Close</Button>
-		    </Modal.Footer>
-		  </Modal.Dialog>
+				    </Modal.Body>
+
+				    {/*<Modal.Footer>
+				      <Button bsSize="small" onClick={this.props.handleClose}>Close</Button>
+				    </Modal.Footer>*/}
+				  </Modal.Dialog>
+				</div>
+				<div class="col-md-4" />
+			</div>
 		</div>
       </div>
     );
