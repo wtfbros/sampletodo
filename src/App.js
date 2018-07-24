@@ -3,6 +3,14 @@ import TODOForm from './TODOForm.js';
 import TODOList from './TODOList.js';
 // import { ToastContainer } from "react-toastr";
 import './App.css';
+import {Form,Col, Row, notification, Card, Button} from 'antd'
+
+const openNotification = (type, title, message) => {
+  notification[type]({
+    message: title,
+    description: message,
+  })
+}
 
 class App extends Component {
 	constructor(props) {
@@ -60,7 +68,7 @@ class App extends Component {
 		  		});
 	  		// console.log(event.target.dataset.key);
 	  		} else {
-	  			document.getElementById("modaltrue").removeAttribute("hidden");
+	  			openNotification('warning', 'OMAE!', 'Please make sure all required fields are filled out correctly.');
 	  		}
 	  	}
 	  	// console.log("wow");
